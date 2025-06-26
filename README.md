@@ -62,7 +62,7 @@ You are now ready to use the library!
 
 ## 2. How to Use Brinias-engine
 
-Using `brinias` is a simple, two-step process:
+Using `brinias-engine` is a simple, two-step process:
 1.  **Train a Model** on your dataset.
 2.  **Make Predictions** using the trained model.
 
@@ -143,7 +143,7 @@ The function will return a dictionary containing the prediction, for example: `{
 
 ## 📊 Benchmark Results
 
-To demonstrate the effectiveness of `Brinias`, a fair benchmark was conducted against several standard regression models. The goal is to predict the `next_close` price of Ethereum.
+To demonstrate the effectiveness of `Brinias-engine`, a fair benchmark was conducted against several standard regression models. The goal is to predict the `next_close` price of Ethereum.
 
 ### Performance Metrics
 
