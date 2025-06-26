@@ -1,5 +1,5 @@
 
-# Brinias-ngine: Symbolic Modeling Engine
+# Brinias-engine: Symbolic Modeling Engine
 
 Brinias-engine is a powerful Python library that uses Genetic Programming to automatically discover mathematical formulas that model your data. It can be used for both regression (predicting a number) and classification (predicting a category) tasks.
 
