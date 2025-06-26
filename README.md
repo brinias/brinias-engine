@@ -43,7 +43,8 @@ You are now ready to use the library!
 
 ## 2. The Main Workflow
 
-Using `brinias-engine` is a simple, two-step process:
+Using `
+-engine` is a simple, two-step process:
 1.  **Train a Model** on your dataset.
 2.  **Make Predictions** using new data.
 
