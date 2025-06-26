@@ -1,8 +1,7 @@
 
-```markdown
-# Brinias: Symbolic Modeling Engine
+# Brinias-ngine: Symbolic Modeling Engine
 
-Brinias is a powerful Python library that uses Genetic Programming to automatically discover mathematical formulas that model your data. It can be used for both regression (predicting a number) and classification (predicting a category) tasks.
+Brinias-engine is a powerful Python library that uses Genetic Programming to automatically discover mathematical formulas that model your data. It can be used for both regression (predicting a number) and classification (predicting a category) tasks.
 
 The key output is a simple, human-readable mathematical equation that represents the learned model.
 
@@ -11,14 +10,14 @@ The key output is a simple, human-readable mathematical equation that represents
 *   **Symbolic Regression & Classification:** Finds the underlying formula in your data.
 *   **Automated Feature Preprocessing:** Handles numerical, categorical, and text data automatically.
 *   **Simple API:** Train a model and make predictions with just two main functions.
-*   **Portable Models:** Exports the final formula into a standalone Python file (`generated_model.py`) that can be used anywhere without needing the `brinias` library itself.
+*   **Portable Models:** Exports the final formula into a standalone Python file (`generated_model.py`) that can be used anywhere without needing the `brinias-engine` library itself.
 *   **Transparent & Interpretable:** The final model is a clear equation, not a black box.
 
 ## What is the Output? An Example Equation
 
-Unlike traditional "black box" models (like deep neural networks), the primary output of `Brinias` is a mathematical formula. This formula represents the best model found to describe the relationship between your features and the target.
+Unlike traditional "black box" models (like deep neural networks), the primary output of `Brinias-engine` is a mathematical formula. This formula represents the best model found to describe the relationship between your features and the target.
 
-For example, after running on financial data, `Brinias` might discover a formula like this:
+For example, after running on financial data, `Brinias-engine` might discover a formula like this:
 
 ```
 safe_exp(protected_log(sub(sub(sub(sub(sub(sub(Close, -1.408225548256985), cos(Close)), cos(sub(Close, sin(Open)))), safe_tan(cos(Close))), cos(sub(Close, sin(Open)))), cos(sub(Close, sin(Open))))))
