@@ -1,0 +1,6 @@
+--- BENCHMARK RESULTS ---
+                     Time (s)          MSE        R2
+Brinias            244.167924  5972.448069  0.480127
+Linear Regression    0.000996  6161.008414  0.463714
+XGBoost              0.172237  7319.930669  0.362835
+Random Forest        0.148292  7394.585323  0.356337
