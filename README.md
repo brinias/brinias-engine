@@ -60,7 +60,7 @@ source .venv/bin/activate
 
 You are now ready to use the library!
 
-## 2. How to Use Brinias
+## 2. How to Use Brinias-engine
 
 Using `brinias` is a simple, two-step process:
 1.  **Train a Model** on your dataset.
