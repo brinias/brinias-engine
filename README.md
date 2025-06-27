@@ -43,6 +43,10 @@ source .venv/bin/activate
 # .\.venv\Scripts\activate
 ```
 
+
+### then run --> pip install brinias-engine    OR:
+
+
 ### Step 2: Clone and Install
 1.  **Clone the Repository:**
     Open your terminal and clone the project.
