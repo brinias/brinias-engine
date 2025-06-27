@@ -14,49 +14,37 @@ from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 
 # --- Import from your library ---
-# Note the change from 'einstein_engine' to 'brinias'
 from brinias import Brinias
 from brinias.file_utils import fit_and_transform_data, transform_new_data
 
 # === 1. Configuration ===
-# Assumes data is in a 'data' subfolder inside 'examples'
-# You may need to create this folder and put your CSVs inside
-# examples/
-#  ├── data/
-#  │   ├── dataeth.csv
-#  │   └── dataeth2.csv
-#  └── benchmark.py
+
 TRAIN_FILE = "dataeth.csv"
 TEST_FILE = "dataeth2.csv"
 TARGET_COLUMN = "next_close"
-MODEL_OUTPUT_DIR = "brinias_benchmark_model" # Directory for Brinias artifacts
-
+MODEL_OUTPUT_DIR = "brinias_benchmark_model" 
 print("🚀 Starting Fair Benchmark...")
 print(f"Training data: {TRAIN_FILE}")
 print(f"Testing data:  {TEST_FILE}")
 
 # === 2. Load and Prepare Data ===
 print("\nProcessing training data...")
-# The fit function now needs the output_dir for Brinias to save its artifacts
 X_train, y_train, feature_names, task_type = fit_and_transform_data(
     TRAIN_FILE, TARGET_COLUMN, MODEL_OUTPUT_DIR
 )
 
 print("Processing test data...")
 df_test_raw = pd.read_csv(TEST_FILE)
-# The transform function now needs the model_dir to load the correct artifacts
 X_test = transform_new_data(df_test_raw, MODEL_OUTPUT_DIR)
 y_test = df_test_raw[TARGET_COLUMN].values
 
 print(f"\nTraining on {X_train.shape[0]} samples, testing on {X_test.shape[0]} samples.")
 print(f"Number of features: {X_train.shape[1]}")
 
-# === 3. Define Models for Benchmark ===
 models = {
     "Linear Regression": LinearRegression(),
     "Random Forest": RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1),
     "XGBoost": XGBRegressor(n_estimators=100, objective='reg:squarederror', random_state=42, n_jobs=-1),
-    # Change DigitalEinstein to Brinias
     "Brinias": Brinias(
         n_features=X_train.shape[1],
         feature_names=feature_names,
@@ -70,7 +58,7 @@ models = {
 
 # === 4. Run Benchmark ===
 results = {}
-predictions_dict = {} # Renamed for clarity
+predictions_dict = {} 
 all_preds_df = pd.DataFrame({'y_true': y_test})
 
 for name, model in models.items():

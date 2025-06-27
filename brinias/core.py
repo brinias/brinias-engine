@@ -17,7 +17,7 @@ from deap import gp, base, creator, tools, algorithms
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error, accuracy_score
 
-# (All protected math functions: protected_div, protected_log, etc. go here unchanged)
+
 def protected_div(a, b):
     try:
         if b == 0 or np.isnan(b) or np.isinf(a) or np.isinf(b): return 1.0
@@ -51,7 +51,7 @@ def preprocess_input(value):
 #  Brinias Core Class                         #
 ###############################################
 
-class Brinias: # <-- RENAMED CLASS
+class Brinias: 
     def __init__(
         self,
         n_features: int,
@@ -59,10 +59,10 @@ class Brinias: # <-- RENAMED CLASS
         task: str = "regression",
         pop_size: int = 300,
         generations: int = 100,
-        cv_folds: int = 5,
+        cv_folds: int = 10,
         seed: int = 42,
     ):
-        # (The rest of the class is identical to DigitalEinstein, no other changes needed inside)
+        
         self.n_features = n_features
         self.feature_names = feature_names or [f"x{i}" for i in range(n_features)]
         self.task = task
@@ -163,7 +163,7 @@ class Brinias: # <-- RENAMED CLASS
             return (preds > 0.5).astype(int)
         return preds
 
-    # (export_to_python, expression_str, etc. are all unchanged)
+   
     def expression_str(self) -> str:
         return str(self.best_expr)
     def save_history(self, path: str):
@@ -242,7 +242,7 @@ class Brinias: # <-- RENAMED CLASS
 
         expr = str(self.best_expr)
 
-        # Mapping DEAP primitive names to math symbols/functions
+        
         replacements = {
             "add": "+",
             "sub": "-",
@@ -259,11 +259,11 @@ class Brinias: # <-- RENAMED CLASS
             "if_then_else": "if_then_else",
         }
 
-        # Αντικατάσταση ονομάτων συναρτήσεων
+       
         for func, symbol in replacements.items():
             expr = re.sub(rf"\b{func}\b", symbol, expr)
 
-        # Προσθήκη spacing και clean εμφάνιση
+        
         expr = expr.replace(",", " , ")
         expr = expr.replace("(", "( ").replace(")", " )")
         expr = re.sub(r"\s+", " ", expr)

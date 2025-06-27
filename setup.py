@@ -17,7 +17,8 @@ setup(
         "numpy",
         "scikit-learn",
         "deap",
-        "matplotlib"
+        "matplotlib",
+        "xgboost"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

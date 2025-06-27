@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from typing import Dict, Any
 
 from .core import Brinias
-# CORRECTED: Import the right functions from the right file
+
 from .file_utils import fit_and_transform_data, transform_new_data
 
 def train_model(
@@ -27,7 +27,7 @@ def train_model(
     os.makedirs(output_dir, exist_ok=True)
 
     print("--- Loading and Preprocessing Data ---")
-    # CORRECTED: Call the correct function
+    
     X, y, feature_names, task_type = fit_and_transform_data(csv_path, target_column, output_dir)
 
     print(f"Data loaded. Found {X.shape[0]} samples and {X.shape[1]} features.")
