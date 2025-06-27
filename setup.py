@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="brinias", 
+    name="brinias-engine", 
     version="0.1.0",
     author="Konstantinos Brinias",
     author_email="brinias2@gmail.com",
